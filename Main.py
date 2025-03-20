@@ -247,7 +247,7 @@ def compile_results(experiment_name, log_dirs):
         params.append(param)
         
         # Load metrics file (find the first metrics file in the directory)
-        metrics_files = [f for f in os.listdir(log_dir) if f.endswith('metrics_chunk100.csv')]
+        metrics_files = [f for f in os.listdir(log_dir) if (f.endswith('metrics_chunk100.csv') or f.startswith('sac_metrics_chunk'))]
         if not metrics_files:
             print(f"No metrics found in {log_dir}")
             continue
